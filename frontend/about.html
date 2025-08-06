@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: url('images/back.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            min-height: 100vh;
+            padding-top: 120px;
+            overflow-x: hidden;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* Navigation (Unchanged from Original) */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            z-index: 999;
+            flex-wrap: wrap;
+        }
+
+        .logo-area img {
+            height: 100px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff4081;
+        }
+
+        .tickets-btn {
+            background: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .tickets-btn:hover {
+            background: #ff1c65;
+        }
+
+        /* About Us Section */
+        .about-section {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .about-section h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ff4081, #ff8fa3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: #ddd;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        /* Developer Grid */
+        .developer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Developer Card */
+        .developer-card {
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 0, 100, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .developer-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 30px rgba(255, 64, 129, 0.6);
+        }
+
+        /* Developer Photo */
+        .developer-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+            border: 3px solid #ff4081;
+            transition: transform 0.3s ease;
+        }
+
+        .developer-card:hover .developer-photo {
+            transform: scale(1.05);
+        }
+
+        /* Developer Info */
+        .developer-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .developer-role {
+            font-size: 1rem;
+            color: #ff8fa3;
+            margin-bottom: 10px;
+        }
+
+        .developer-bio {
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        /* Footer (Unchanged) */
+        .footer-section {
+            width: 100%;
+            background: rgba(18, 18, 80, 0.475);
+            color: #ddd;
+            text-align: center;
+            padding: 50px 0;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-nav">
+        <div class="logo-area">
+            <img src="images/point.png" alt="Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="mylist.html">My List</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="contactUs.html">Contact Us</a>
+        </nav>
+
+        <a href="mylist.html" class="start-btn">WatchList</a>
+    </header>
+
+    <section class="about-section">
+        <h1>Meet Our Developers</h1>
+        <p>We are a passionate team of developers who built MovieWatch to deliver the ultimate movie tracking experience
+            for film enthusiasts everywhere.</p>
+
+        <div class="developer-grid">
+            <!-- Developer 1 -->
+            <div class="developer-card">
+                <img src="images/cat1.jpg" alt="Developer 1" class="developer-photo">
+                <h3>Fatma Walid 1085099</h3>
+                <p class="developer-role">Cybersecurity Engineer</p>
+                <p class="developer-bio">Finishing her last course in Cybersecurity Engineering, 
+                    Fatma is passionate about creating secure and user-friendly websites.
+                     She loves turning ideas into polished projects that people can enjoy.</p>
+            </div>
+
+            <!-- Developer 2 -->
+            <div class="developer-card">
+                <img src="images/cat3.jpg" alt="Developer 2" class="developer-photo">
+                <h3>Shaikha Albloushi 1083118</h3>
+                <p class="developer-role">Cybersecurity Engineer</p>
+                <p class="developer-bio">In her final course, Shaikha focuses on making things run 
+                    smoothly and safely. She enjoys solving problems and making sure 
+                    every part of the website works perfectly.</p>
+            </div>
+
+            <!-- Developer 3 -->
+            <div class="developer-card">
+                <img src="images/cat2.jpg" alt="Developer 3" class="developer-photo">
+                <h3>Yomna Yassir 1089137</h3>
+                <p class="developer-role">Cybersecurity Engineer</p>
+                <p class="developer-bio">Starting her 4th year in Cybersecurity Engineering,
+                     Yomna brings fresh ideas and enthusiasm to the team. She’s excited to
+                      keep learning and exploring the world of web development.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer-section">
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="watchlist.html">Watchlist</a>
+            <a href="mylist.html">My List</a>
+            <a href="contactUs.html">Contact</a>
+        </div>
+
+        <div class="footer-desc">
+            Discover new movies and shows to add to your Watch List.
+            Stay up to date, entertained, and inspired — one click at a time!
+        </div>
+
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 MoviePoint | Built with 🎬 by Movie Lovers
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MoviePoint - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css" />
+
+</head>
+
+<body>
+
+  <header class="main-nav">
+    <div class="logo-area">
+      <img src="images/point.png" alt="Logo">
+    </div>
+    <nav class="nav-links">
+      <a href="home.html" class="active">Home</a>
+      <a href="watchlist.html">Watchlist</a>
+      <a href="mylist.html">My List</a>
+      <a href="about.html">About Us</a>
+      <a href="ContactUS.html">Contact Us</a>
+    </nav>
+
+    <a href="mylist.html" class="start-btn">WatchList</a>
+  </header>
+
+  <div class="slider-wrapper">
+    <div class="arrow left" onclick="slide(-1)">&#10094;</div>
+    <div class="slider" id="slider">
+
+      <!-- Repeat this block 8 times with different content -->
+      <div class="movie-card">
+        <div class="poster-box">
+          <img src="images/F1.jpg" alt="Movie Poster">
+        </div>
+        <div class="details-box">
+          <h2>F1: The Movie (2025)</h2>
+          <div class="stars">★★★★☆ <span class="Rate">7.9/10 on IMDb</span></div>
+          <p>Dive into the thrilling world of Formula 1 as Brad Pitt plays a veteran driver returning to the grid to
+            mentor a young rising star. With high-speed action and real racing footage, this is the most immersive
+            motorsport film ever made.</p>
+          <div class="cast-title">Cast:</div>
+          <div class="cast-list">
+            <img src="images/brad.jpg" alt="Brad Pitt">
+            <img src="images/dams.jpeg" alt="Damson Idris">
+            <img src="images/javi.jpeg" alt="Javier Bardem">
+            <img src="images/kerr.jpg" alt="Kerry Condon">
+          </div>
+          <a href="watchlist.html" class="start-btn">
+            ▶ Go To Watch List</a>
+        </div>
+      </div>
+
+      <!-- Duplicate 7 more cards below -->
+      <div class="movie-card">
+        <div class="poster-box"><img src="images/Avengers Endgame.jpg"></div>
+        <div class="details-box">
+          <h2>Avengers: Endgame</h2>
+          <div class="stars">★★★★★ <span class="Rate">8.4/10 on IMDb</span></div>
+          <p>The Avengers assemble one last time to reverse the snap and save the world...</p>
+          <div class="cast-title">Cast:</div>
+          <div class="cast-list"><img src="images/reobert.jpeg"><img src="images/chris.jpg"><img
+              src="images/scar.jpg"><img src="images/hems.jpg"></div><a href="watchlist.html" class="start-btn">
+            ▶ Go To Watch List</a>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="poster-box"><img src="images/Barbie.jpg"></div>
+        <div class="details-box">
+          <h2>Barbie</h2>
+          <div class="stars">★★★★☆ <span class="Rate">6.8/10 on IMDb</span></div>
+          <p>Barbie leaves her perfect plastic world behind to explore the real world and discover what it means to be
+            truly human — a fun, colorful journey filled with humor and heart.</p>
+          <div class="cast-title">Cast:</div>
+          <div class="cast-list"><img src="images/mar.jpeg"><img src="images/ryan.jpg"><img src="images/ameri.jpg"><img
+              src="images/kate.jpeg"></div><a href="watchlist.html" class="start-btn">
+            ▶ Go To Watch List</a>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <div class="poster-box"><img src="images/Dune Part Two.jpg"></div>
+        <div class="details-box">
+          <h2>Avengers: Endgame</h2>
+          <div class="stars">★★★★★ <span class="Rate">8.6/10 on IMDb</span></div>
+          <p>Description: Paul Atreides unites with the Fremen to seek revenge against those who destroyed his family. A
+            stunning sci-fi saga of destiny, war, and prophecy unfolds on the desert planet of Arrakis.
+          </p>
+          <div class="cast-title">Cast:</div>
+          <div class="cast-list"><img src="images/temoth.jpeg"><img src="images/zenda.jpeg"><img
+              src="images/rebica.jpeg"><img src="images/austin.jpeg"></div><a href="watchlist.html" class="start-btn">
+            ▶ Go To Watch List</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="arrow right" onclick="slide(1)">&#10095;</div>
+  </div>
+
+  <div class="reasons-section">
+    <h2>Why You'll Love MoviePoint</h2>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <h3>Everything in One Place</h3>
+        <p>Save all your favorite shows and movies. No more forgotten titles!</p>
+        <img src="images/checklist.png" alt="Checklist Icon">
+      </div>
+      <div class="reason-card">
+        <h3>Smart Watchlist</h3>
+        <p>Organize your list by genre, mood, or platform with easy filtering.</p>
+        <img src="images/watch.webp" alt="Tags Icon">
+      </div>
+      <div class="reason-card">
+        <h3>Reminders & Alerts</h3>
+        <p>Get notified when a new episode or film is released — stay updated!</p>
+        <img src="images/reminder.png" alt="Reminder Icon">
+      </div>
+      <div class="reason-card">
+        <h3>Ratings & Notes</h3>
+        <p>Rate what you watch and add quick notes to track your favorites.</p>
+        <img src="images/rate.png" alt="Notes Icon">
+      </div>
+        
+    </div>
+  </div>
+
+
+  <section class="cta-section">
+    <h2>Don't Miss Out!</h2>
+    <p>Discover the most exciting movies and shows. Save your favorites to your Watch List so you never miss a moment!
+    </p>
+    <a href="watchlist.html" class="start-btn">⭐ Go to Watch List</a>
+
+  </section>
+
+  <footer class="footer-section">
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="watchlist.html">Watchlist</a>
+      <a href="mylist.html">My List</a>
+      <a href="contactUs.html">Contact</a>
+    </div>
+
+    <div class="footer-desc">
+      Discover new movies and shows to add to your Watch List.
+      Stay up to date, entertained, and inspired — one click at a time!
+    </div>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 MoviePoint | Built with 🎬 by Movie Lovers
+    </div>
+  </footer>
+
+
+  <script>
+    const slider = document.getElementById('slider'); // Slider container
+    const cards = slider.children; // All cards inside slider
+    const frameWidth = cards[0].offsetWidth + 20; // Card width + margin
+    let index = 1; // Start from first real card
+
+    // Clone first and last card for looping
+    const firstClone = cards[0].cloneNode(true);
+    const lastClone = cards[cards.length - 1].cloneNode(true);
+    slider.appendChild(firstClone);
+    slider.insertBefore(lastClone, cards[0]);
+
+    // Initial position
+    slider.style.transform = `translateX(-${frameWidth}px)`;
+
+    // Slide function
+    function slide(dir) {
+      const totalCards = slider.children.length;
+      index += dir;
+
+      slider.style.transition = 'transform 0.5s ease-in-out';
+      slider.style.transform = `translateX(-${index * frameWidth}px)`;
+
+      // Loop back when reaching clones
+      slider.addEventListener('transitionend', () => {
+        if (index === 0) {
+          slider.style.transition = 'none';
+          index = totalCards - 2; // Jump to last real card
+          slider.style.transform = `translateX(-${index * frameWidth}px)`;
+        }
+        if (index === totalCards - 1) {
+          slider.style.transition = 'none';
+          index = 1; // Jump to first real card
+          slider.style.transform = `translateX(-${index * frameWidth}px)`;
+        }
+      }, { once: true });
+    }
+
+  </script>
+
+
+
+</body>
+
+</html>

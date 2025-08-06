@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Movie - Admin Panel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: url('images/back.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 20px;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .form-container {
+      background-color: rgba(28, 28, 28, 0.95);
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+
+    .button-group button {
+      padding: 10px 20px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .back-btn {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .success {
+      color: #28a745;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .error {
+      color: #dc3545;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Admin – Add a Movie</h2>
+  <div class="form-container">
+    <div class="form-group">
+      <label for="title">Movie Title:</label>
+      <input type="text" id="title" placeholder="Enter movie title" />
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre:</label>
+      <select id="genre">
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Documentary">Documentary</option>
+        <option value="Drama">Drama</option>
+        <option value="Horror">Horror</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="rating">Rating:</label>
+      <select id="rating">
+        <option value="1">★☆☆☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="4">★★★★☆</option>
+        <option value="5">★★★★★</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="voters">Voters:</label>
+      <input type="text" id="voters" placeholder="e.g. 500k, 1M" />
+    </div>
+
+    <div class="form-group">
+      <label for="image">Upload Poster Image:</label>
+      <input type="file" id="image" accept="image/*" />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" placeholder="Write a short description..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="adminPassword">Admin Password:</label>
+      <input type="password" id="adminPassword" placeholder="Enter admin password" />
+    </div>
+
+    <div class="button-group">
+      <button class="back-btn" onclick="location.href='watchlist.html'">⬅ Back</button>
+      <button class="submit-btn" onclick="addMovie()">+ Add Movie</button>
+    </div>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    async function addMovie() {
+      const title = document.getElementById("title").value.trim();
+      const genre = document.getElementById("genre").value;
+      const description = document.getElementById("description").value.trim();
+      const rating = document.getElementById("rating").value;
+      const voters = document.getElementById("voters").value.trim();
+      const imageFile = document.getElementById("image").files[0];
+      const adminPassword = document.getElementById("adminPassword").value.trim();
+      const message = document.getElementById("message");
+
+      // Validate fields
+      if (!title || !genre || !description || !rating || !voters || !imageFile || !adminPassword) {
+        message.innerHTML = "<div class='error'>Please fill out all fields and upload an image.</div>";
+        return;
+      }
+
+      // Prepare form data for upload
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("genre", genre);
+      formData.append("description", description);
+      formData.append("rating", rating);
+      formData.append("voters", voters);
+      formData.append("image", imageFile);
+      formData.append("adminPassword", adminPassword);
+
+      try {
+        // Send POST request to backend
+        const res = await fetch("http://localhost:8090/MoviePoint/watchlist/upload", {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await res.json();
+
+        // Show success or error message
+        if (res.ok && result.movie) {
+          message.innerHTML = "<div class='success'>Movie added successfully!</div>";
+          setTimeout(() => {
+            window.location.href = "watchlist.html"; // Redirect after success
+          }, 1200);
+        } else {
+          message.innerHTML = `<div class='error'> ${result.msg || "Upload failed."}</div>`;
+        }
+      } catch (err) {
+        console.error(err);
+        message.innerHTML = "<div class='error'> Server error. Please try again.</div>";
+      }
+    }
+
+  </script>
+</body>
+
+</html>
