@@ -67,5 +67,14 @@ app.post('/MoviePoint/watchlist/upload', upload.single('image'), async (req, res
   }
 });
 
+require('dotenv').config();
+ 
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log(" Connected to MongoDB Atlas"))
+.catch((err) => console.error(" MongoDB connection error:", err));
+
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
