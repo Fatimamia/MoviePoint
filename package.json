@@ -1,0 +1,19 @@
+{
+  "name": "netflixbackend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "git": "^0.1.5",
+    "mongoose": "^8.17.0",
+    "multer": "^2.0.2",
+    "url": "^0.11.4"
+  }
+}
